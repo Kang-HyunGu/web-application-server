@@ -10,8 +10,8 @@ public class WebServer {
     private static final Logger log = LoggerFactory.getLogger(WebServer.class);
     private static final int DEFAULT_PORT = 8080;
 
-    public static void main(String args[]) throws Exception {
-        int port = 0;
+    public static void main(String[] args) throws Exception {
+        int port;
         if (args == null || args.length == 0) {
             port = DEFAULT_PORT;
         } else {
@@ -19,7 +19,6 @@ public class WebServer {
         }
 
         // 서버소켓을 생성한다. 웹서버는 기본적으로 8080번 포트를 사용한다.
-
         try (ServerSocket listenSocket = new ServerSocket(port)) {
             log.info("Web Application Server started {} port.", port);
 
@@ -27,7 +26,7 @@ public class WebServer {
             Socket connection;
             while ((connection = listenSocket.accept()) != null) {
                 RequestHandler requestHandler = new RequestHandler(connection);
-                requestHandler.start();
+                requestHandler.run();
             }
         }
     }
