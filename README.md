@@ -16,9 +16,9 @@
 
 ### 요구사항 1 - http://localhost:8080/index.html로 접속시 응답
 - [x] 1단계
--- InputStreamReader 객체는 스트림에서 문자열을 읽어올 때 사용한다.
--- BufferedReader로 InputStreamReader을 감싸야 한줄한줄 연결을 맺고 끊지 않고 한 번에 읽어올 수 있다.
--- bufferedReader.ready()를 사용하면 http header 정보를 출력하는 코드가 깔끔해진다.
+  - InputStreamReader 객체는 스트림에서 문자열을 읽어올 때 사용한다.
+  - BufferedReader로 InputStreamReader을 감싸야 한줄한줄 연결을 맺고 끊지 않고 한 번에 읽어올 수 있다.
+  - bufferedReader.ready()를 사용하면 http header 정보를 출력하는 코드가 깔끔해진다.
 - [ ] 2단계
 - [ ] 3단계
 
