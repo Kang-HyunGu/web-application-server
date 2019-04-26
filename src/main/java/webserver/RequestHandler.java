@@ -3,6 +3,7 @@ package webserver;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 import http.request.Request;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class RequestHandler implements Runnable {
 
             Request request = new Request(bufferedReader);
 
-            byte[] body = "Hello World".getBytes();
+            byte[] body = Files.readAllBytes(new File("./webapp" + request.uri()).toPath());
 
             DataOutputStream dos = new DataOutputStream(out);
             response200Header(dos, body.length);

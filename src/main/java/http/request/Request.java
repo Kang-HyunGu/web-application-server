@@ -26,6 +26,23 @@ public class Request {
 //        }
     }
 
+    Request(RequestLine requestLine, List<MessageHeaders> messageHeaders, MessageBody messageBody) {
+        this.requestLine = requestLine;
+        this.messageHeaders = messageHeaders;
+        this.messageBody = messageBody;
+    }
+
+    // index.html로 설정 하는건 어느 객체 책임일까
+    public String uri() {
+        final String uri = requestLine.getRequestUri();
+
+        if ("/".equals(uri)) {
+            return "/index.html";
+        }
+
+        return uri;
+    }
+
     @Override
     public String toString() {
         return "Request{" +

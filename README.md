@@ -22,7 +22,8 @@
 - [x] 2단계
     - https://tools.ietf.org/html/rfc2616#section-5 참고하여 클래스명 정의
     - assertj는 junit에 포함되어 있지 않다.
-- [ ] 3단계
+- [x] 3단계
+    - index.html로 설정 하는건 어느 객체 책임일까. RequestLine 아니면 Request일까
 
 ### 요구사항 2 - get 방식으로 회원가입
 - 
